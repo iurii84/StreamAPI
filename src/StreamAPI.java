@@ -1,10 +1,9 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.time.LocalTime;
+import java.util.*;
 import java.util.stream.*;
 
 public class StreamAPI {
-   static List<Person> users = new ArrayList<>();
+   private static List<Person> users = new ArrayList<>();
 
     public static void main(String[] args) {
         users.add(new Person("Ann", 30, true));
@@ -18,7 +17,14 @@ public class StreamAPI {
                 filter(user -> user.getAge() >= 10 && user.isMarried).
                 sorted(Comparator.comparing(Person::getName)).collect(Collectors.toList());
 
-        filteredUsers.forEach(System.out :: println);
+       // filteredUsers.forEach(System.out :: println);
+
+
+        List<Person> filteredUsers2 = users.stream().
+                filter(n -> n.getName().startsWith("N")).
+                collect(Collectors.toList());
+
+        filteredUsers2.forEach(System.out :: println);
 
     }
 
