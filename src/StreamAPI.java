@@ -29,7 +29,12 @@ public class StreamAPI {
         Map<Integer, List<Person>> personByAge = users.stream().
                 collect(Collectors.groupingBy(Person::getAge));
 
-        personByAge.forEach((age, p) -> System.out.println("Age is: " + age + p));
+     //   personByAge.forEach((age, p) -> System.out.println("Age is: " + age + p));
+
+
+        Double avgAge = users.stream().
+                collect(Collectors.averagingInt(Person::getAge));
+        System.out.println(avgAge);
     }
 
 
