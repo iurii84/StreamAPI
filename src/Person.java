@@ -1,23 +1,23 @@
 public class Person {
-    String name;
-    int age;
-    boolean isMarried;
+    private String name;
+    private int age;
+    private boolean isMarried;
 
-    public Person(String name, int age, boolean isMarried) {
+     Person(String name, int age, boolean isMarried) {
         this.name = name;
         this.age = age;
         this.isMarried = isMarried;
     }
 
-    public String getName() {
+     String getName() {
         return name;
     }
 
-    public void setName(String name) {
+     public void setName(String name) {
         this.name = name;
     }
 
-    public int getAge() {
+     int getAge() {
         return age;
     }
 
@@ -25,7 +25,7 @@ public class Person {
         this.age = age;
     }
 
-    public boolean isMarried() {
+    boolean isMarried() {
         return isMarried;
     }
 
@@ -35,10 +35,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", isMarried=" + isMarried +
-                '}';
+        return name;
     }
 }

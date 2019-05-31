@@ -1,4 +1,3 @@
-import java.time.LocalTime;
 import java.util.*;
 import java.util.stream.*;
 
@@ -11,10 +10,11 @@ public class StreamAPI {
         users.add(new Person("Katty", 10, false));
         users.add(new Person("Elly", 64, true));
         users.add(new Person("Nick", 9, false));
+        users.add(new Person("Patricia", 25, false));
 
 
         List<Person> filteredUsers = users.stream().
-                filter(user -> user.getAge() >= 10 && user.isMarried).
+                filter(user -> user.getAge() >= 10 && user.isMarried()).
                 sorted(Comparator.comparing(Person::getName)).collect(Collectors.toList());
 
        // filteredUsers.forEach(System.out :: println);
@@ -24,8 +24,12 @@ public class StreamAPI {
                 filter(n -> n.getName().startsWith("N")).
                 collect(Collectors.toList());
 
-        filteredUsers2.forEach(System.out :: println);
+//        filteredUsers2.forEach(System.out :: println);
 
+        Map<Integer, List<Person>> personByAge = users.stream().
+                collect(Collectors.groupingBy(Person::getAge));
+
+        personByAge.forEach((age, p) -> System.out.println("Age is: " + age + p));
     }
 
 
