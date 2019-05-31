@@ -14,27 +14,35 @@ public class StreamAPI {
 
 
         List<Person> filteredUsers = users.stream().
-                filter(user -> user.getAge() >= 10 && user.isMarried()).
-                sorted(Comparator.comparing(Person::getName)).collect(Collectors.toList());
+                filter(user -> user.getAge() >= 10 && user.isMarried())
+                .sorted(Comparator.comparing(Person::getName))
+                .collect(Collectors.toList());
 
        // filteredUsers.forEach(System.out :: println);
 
 
-        List<Person> filteredUsers2 = users.stream().
-                filter(n -> n.getName().startsWith("N")).
-                collect(Collectors.toList());
+        List<Person> filteredUsers2 = users.stream()
+                .filter(n -> n.getName().startsWith("N"))
+                .collect(Collectors.toList());
 
 //        filteredUsers2.forEach(System.out :: println);
 
-        Map<Integer, List<Person>> personByAge = users.stream().
-                collect(Collectors.groupingBy(Person::getAge));
+        Map<Integer, List<Person>> personByAge = users.stream()
+                .collect(Collectors.groupingBy(Person::getAge));
 
      //   personByAge.forEach((age, p) -> System.out.println("Age is: " + age + p));
 
 
-        Double avgAge = users.stream().
-                collect(Collectors.averagingInt(Person::getAge));
-        System.out.println(avgAge);
+        Double avgAge = users.stream()
+                .collect(Collectors.averagingInt(Person::getAge));
+        //System.out.println(avgAge);
+
+
+        String phrase = users.stream()
+                .filter(p -> p.getAge() >= 18 && p.getAge() < 60)
+                .map(Person::getName)
+                .collect(Collectors.joining(" and ", "In the univercity ", " are adults"));
+        System.out.println(phrase);
     }
 
 
