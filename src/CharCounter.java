@@ -3,10 +3,10 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CharCounter {
-    private static String string = "Process finished with exit code 0";
 
     public static void main(String[] args) {
 
+        String string = "Process finished with exit code 0";
         String[] strArray = string.split("");
 
         Map<String, Long> map =  Arrays.stream(strArray)
