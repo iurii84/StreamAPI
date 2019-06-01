@@ -19,7 +19,7 @@ public class WordsCounter {
 
     public static void main(String[] args) {
         Map<String, Long> objectsMap = words.stream()
-                .collect(Collectors.groupingBy(e -> e.toUpperCase(), Collectors.counting()));
+                .collect(Collectors.groupingBy(String::toUpperCase, Collectors.counting()));
 
 
         System.out.println(objectsMap);

@@ -13,11 +13,11 @@ public class Lambda {
         double operate(double a, double b);
     }
     private static double calculate(double a, double b, String operation){
-        MathOperation add = (val1, val2) -> val1 + val2;
+        MathOperation add = Double::sum;
         MathOperation subtract = (val1, val2) -> val1 - val2;
         MathOperation multiply = (val1, val2) -> val1 * val2;
         MathOperation divide = (val1, val2) -> val1 / val2;
-        MathOperation exponentiate = (val1, val2) -> Math.pow(val1, val2);
+        MathOperation exponentiate = Math::pow;
 
         switch(operation) {
             case "SUM":
