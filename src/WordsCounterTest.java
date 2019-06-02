@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,11 +32,16 @@ class WordsCounterTest {
 
     @Test
     void sizeTest() {
-        Assertions.assertEquals(expectedMap.size(), actualMap.size());
+        assertEquals(expectedMap.size(), actualMap.size());
     }
 
     @Test
     void dataTest() {
-        Assertions.assertEquals(expectedMap.entrySet(), actualMap.entrySet());
+        assertEquals(expectedMap.entrySet(), actualMap.entrySet());
+    }
+
+    @Test
+    void notNull() {
+        assertNotNull(actualMap);
     }
 }
