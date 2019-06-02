@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -19,12 +20,13 @@ public class WordsCounter {
     }
 
     public static void main(String[] args) {
-        Map<String, Long> objectsMap = words.stream()
-                .collect(Collectors.groupingBy(String::toUpperCase, Collectors.counting()));
-
-
+        WordsCounter counter = new WordsCounter();
+        Map<String, Long> objectsMap = counter.counter(words);
         System.out.println(objectsMap);
     }
 
-
+    Map<String, Long> counter(List<String> list) {
+        return list.stream()
+                .collect(Collectors.groupingBy(String::toUpperCase, Collectors.counting()));
+    }
 }
