@@ -4,6 +4,7 @@ import java.util.stream.Collectors;
 
 public class WordsCounter {
     private static ArrayList<String> words = new ArrayList<>();
+
     static {
         words.add("Car");
         words.add("TV");
@@ -24,8 +25,6 @@ public class WordsCounter {
 
         System.out.println(objectsMap);
     }
-
-
 
 
 }

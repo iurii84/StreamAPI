@@ -3,21 +3,21 @@ public class Person {
     private int age;
     private boolean isMarried;
 
-     Person(String name, int age, boolean isMarried) {
+    Person(String name, int age, boolean isMarried) {
         this.name = name;
         this.age = age;
         this.isMarried = isMarried;
     }
 
-     String getName() {
+    String getName() {
         return name;
     }
 
-     public void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-     int getAge() {
+    int getAge() {
         return age;
     }
 

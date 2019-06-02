@@ -2,7 +2,7 @@ import java.util.*;
 import java.util.stream.*;
 
 public class StreamAPI {
-   private static List<Person> users = new ArrayList<>();
+    private static List<Person> users = new ArrayList<>();
 
     public static void main(String[] args) {
         users.add(new Person("Ann", 30, true));
@@ -18,7 +18,7 @@ public class StreamAPI {
                 .sorted(Comparator.comparing(Person::getName))
                 .collect(Collectors.toList());
 
-       // filteredUsers.forEach(System.out :: println);
+        // filteredUsers.forEach(System.out :: println);
 
 
         List<Person> filteredUsers2 = users.stream()
@@ -30,7 +30,7 @@ public class StreamAPI {
         Map<Integer, List<Person>> personByAge = users.stream()
                 .collect(Collectors.groupingBy(Person::getAge));
 
-     //   personByAge.forEach((age, p) -> System.out.println("Age is: " + age + p));
+        //   personByAge.forEach((age, p) -> System.out.println("Age is: " + age + p));
 
 
         Double avgAge = users.stream()
@@ -44,8 +44,6 @@ public class StreamAPI {
                 .collect(Collectors.joining(" and ", "In the univercity ", " are adults"));
         System.out.println(phrase);
     }
-
-
 
 
 }

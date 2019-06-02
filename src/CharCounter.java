@@ -9,8 +9,8 @@ public class CharCounter {
         String string = "Process finished with exit code 0";
         String[] strArray = string.split("");
 
-        Map<String, Long> map =  Arrays.stream(strArray)
-                .collect(Collectors.groupingBy(String::toUpperCase , Collectors.counting()));
+        Map<String, Long> map = Arrays.stream(strArray)
+                .collect(Collectors.groupingBy(String::toUpperCase, Collectors.counting()));
 
 
         map.entrySet().forEach(System.out::println);
